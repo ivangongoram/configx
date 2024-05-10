@@ -1,10 +1,14 @@
 {
-  "name": "configx",
+  "name": "configxd",
   "version": "1.0.0",
   "description": "",
   "main": "config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivangongoram/configxd.git"
   },
   "keywords": [
     "config",
@@ -12,5 +16,9 @@
     "env"
   ],
   "author": "Ivan Gongora M <ivan.gongoram@gmail.com> (ivangongoram.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivangongoram/configxd/issues"
+  },
+  "homepage": "https://github.com/ivangongoram/configxd#readme"
 }

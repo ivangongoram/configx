@@ -1,5 +1,5 @@
-# ConfigX
-ConfigX is an npm library designed to simplify environment variable management in your Node.js applications. It provides an easy and effective way to access and manage environment variables, allowing you to configure your applications dynamically according to the environment in which they run.
+# ConfigXd
+ConfigXd is an npm library designed to simplify environment variable management in your Node.js applications. It provides an easy and effective way to access and manage environment variables, allowing you to configure your applications dynamically according to the environment in which they run.
 
 ## Contributing
 Contributions are welcome! If you have an idea to improve the library or have found an issue, feel free to open a pull request or an issue on our GitHub repository.
