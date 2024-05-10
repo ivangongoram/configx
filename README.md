@@ -49,7 +49,7 @@ const {bool} = require('configxd')
 
 module.exports = {
     app: {
-        debug: bool(env['DEBUG]),
+        debug: bool(env['DEBUG']),
         token: env['TOKEN'],
         client_id: env['CLIENT_ID'],
         keys: {
