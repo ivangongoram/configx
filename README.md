@@ -89,6 +89,6 @@ Contributions are welcome! If you have an idea to improve the library or have fo
 This project is licensed under the MIT License. Please review the file for more details.
 
 ## Contact
-If you have questions or comments, feel free to contact us via GitHub.
+If you have questions or comments, feel free to contact me via GitHub.
 
 Thank you for using ConfigXD!
