@@ -1,15 +1,27 @@
 # ConfigXD
-ConfigXD is an npm library designed to environment variable management in your Node.js applications, simplifies the management of environment variables in your Node.js application by allowing you to load and access configuration files in a structured way. It provides an easy and effective way to access and manage environment variables, allowing you to configure your applications dynamically according to the environment in which they run.
+ConfigXD is an npm library designed for managing environment variables in your Node.js applications. It simplifies managing environment variables by allowing you to load and access configuration files in a structured way. Additionally, it provides an easy, effective, and secure way to access and manage environment variables.
 
-## How to Use ConfigXD
+## How to Use
 To use ConfigXD, follow these steps:
 
 ### Organizing Configuration Files
-- Config folder: Create a folder called config in the root directory of your project. All configuration files should be placed within this folder.
-- Configuration files: Configuration files should have a .js extension and export an object with the environment variables.
-- File names: The names of the configuration files should match the main key of the JSON object they export. For example, if you have a file named services.js, it should export an object with the main key services.
+1. Config folder: Create a folder called config in the root directory of your project. All configuration files should be placed within this folder.
+
 ```
--> ./config/services.js
+Project
+├── config
+│   ├── app.js
+│   └── services.js
+├── src
+│   └── files
+└── index.js
+```
+
+2. Configuration files: Configuration files should have a .js extension and export an object with the environment variables.
+3. File names: The names of the configuration files should match the main key of the JSON object they export. For example, if you have a file named services.js, it should export an object with the main key services:
+
+`-> ./config/services.js`
+```js
 module.exports = {
     services: {
         trivia: {
@@ -23,13 +35,15 @@ module.exports = {
     }
 }
 ```
+
 ### Tips
 - We know that defining boolean variables can be a headache, so you can use the bool function by importing it from the library. It can be used directly in JSON, just like other native functions.
-- If you're wondering how to obtain environment variables at this point, the example shows the use of the dotenv library, but remember that with the latest updates to Node.js, you can do this natively
+- If you're wondering how to obtain environment variables at this point, we've shown you using the dotenv library, but remember that with the latest updates to Node.js, you can do this natively
 
 The following example shows how to use the bool function and the dotenv library:
-```
--> ./config/app.js
+
+`-> ./config/app.js`
+```js
 const env = require('dotenv').config().parsed;
 const {bool} = require('configxd')
 
@@ -46,16 +60,22 @@ module.exports = {
 }
 ```
 
-### Loading Configuration Files with ConfigXD
-To load configuration files and access the environment variables using ConfigXD, you can use the following approach:
-1. First, import the config function from ConfigXD.
+### Loading and Accessing to Configuration Files
+To load configuration files and access the environment variables, you can use the following approach:
+1. First, import the config function from `configxd`.
 2. Use the config function to access specific environment variables. Pass the key in dot notation to specify the desired configuration.
-```
+
+`-> ./index.js`
+```js
 const {config} = require('configxd');
 
-config("app.token");
+const token = config("app.token");
+const publicKey = config("app.keys.public_key");
 
-config("app.keys.public_key");
+console.log({
+    token: token,
+    public_key: publicKey
+});
 ```
 
 In this example, you import the config function from configxd and use it to access the keys app.token and app.keys.public_key from the configuration. This function returns the value of the specified key.
